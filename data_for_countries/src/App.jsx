@@ -22,6 +22,11 @@ const App = () => {
       .then(matches => {
         setMatches(matches)
       })
+      weatherService
+      .getWeatherData(...matches[0].latlng)
+      .then(data => {
+        setWeatherData(data)
+      })
     } else {
       setMatches([])
     }

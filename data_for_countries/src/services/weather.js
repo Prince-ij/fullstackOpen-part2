@@ -4,6 +4,8 @@ const baseUrl = 'https://api.openweathermap.org/data/2.5/weather'
 
 
 const getWeatherData = (lat, lon, appid=API_KEY) => {
+    console.log('sending request............')
+    console.log('latlng====>', lat, lon)
     const request = axios
     .get(`${baseUrl}`, {
         params: {
@@ -13,6 +15,7 @@ const getWeatherData = (lat, lon, appid=API_KEY) => {
         }
     })
     .then(response => {
+        console.log('data===>', response.data)
         return response.data
     })
     return request
